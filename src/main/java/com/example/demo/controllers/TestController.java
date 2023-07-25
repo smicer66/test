@@ -1,4 +1,4 @@
-package com.example.restfull_home_office_test;
+package com.example.demo.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +19,7 @@ public class TestController{
 	public List<Map<String, ?>> get(@RequestParam(value="id", defaultValue="0") int id) {
 		try {
 			String myurl = "jdbc:mysql://localhost:3306/db";
+			Connection conn = DriverManager.getConnection(myurl, "root", "****");
 			Statement stmt = conn.createStatement();
 			ResultSet rs;
 			
